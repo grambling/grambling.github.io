@@ -1,15 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-  </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-        <p>This is my new website which is hosted on GitHub Pages!</p>
-    </main>
-  </body>
-</html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+</style>
+</head>
+<body>
+
+<h2>Vertical Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openSummary(event, 'Raejean')" id="defaultOpen">Raejean</button>
+  
+  <button class="tablinks" onclick="openSummary(event, 'Kacie')">Kacie</button>
+  
+  <button class="tablinks" onclick="openSummary(event, 'Tyriq')">Tyriq</button>
+  
+  <button class="tablinks" onclick="openSummary(event, 'Keldrick')">Keldrick</button>
+  
+  <button class="tablinks" onclick="openSummary(event, 'Jonathan')">Jonathan</button>
+  
+   <button class="tablinks" onclick="openSummary(event, 'MarQuis')">MarQuis</button>
+   
+</div>
+
+<div id="Raejean" class="tabcontent">
+  <h3>Raejean Johnson - Project 14: Evaluation of cryptography usage in IOS Vault Applications </h3>
+  <p></p>
+</div>
+
+<div id="Kacie" class="tabcontent">
+  <h3>Kacie Lindsay - Project #10: Social Media Forensics </h3>
+  <p></p> 
+</div>
+
+<div id="Tyriq" class="tabcontent">
+  <h3>Tyriq Miles - Project #9: Generating an Intrusion Detection System (IDS) Dataset for Security  </h3>
+  <p></p>
+</div>
+
+<div id="Keldrick" class="tabcontent">
+  <h3>Keldirck Wilson - Project 10: Social Media Forensics </h3>
+  <p></p>
+</div>
+
+<div id="Jonathan" class="tabcontent">
+  <h3>Jonathan Smith - Project #17: The Quest for increased IoT security with forensic agents</h3>
+  <p></p>
+</div>
+
+<div id="MarQuis" class="tabcontent">
+  <h3>MarQuis Steward - Project #1: Protecting Remote Connections</h3>
+  <p></p>
+</div>
+
+<script>
+function openSummary(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
